@@ -4,11 +4,11 @@ import fastify from 'fastify'
 import fastifySocketIOPlugin from 'fastify-socket.io'
 import redis from 'redis'
 
-if (!process.env.SERVER_PORT) throw 'missing port; check env'
+if (!process.env.PORT) throw 'missing port; check env'
 if (!process.env.REDIS_DB_URL) throw 'missing redis db url; check env'
 
 const HOST = '0.0.0.0',
-  PORT = parseInt(process.env.SERVER_PORT),
+  PORT = parseInt(process.env.PORT),
   COMMENT_STREAM_CHANNEL_NAME = 'MEATBALLS:COMMENT_STREAM'
 
 const redisClient = redis.createClient({ url: process.env.REDIS_DB_URL })
