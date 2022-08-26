@@ -1,0 +1,30 @@
+{
+  "name": "meatballs.live-comment-stream",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:ritsuke/meatballs.live-comment-stream.git",
+  "author": "ritsuke <ritsuke@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./build/index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development concurrently \"npx tsc --watch\" \"nodemon --experimental-modules --es-module-specifier-resolution=node -q ./build/index.js\"",
+    "build": "npx tsc",
+    "start": "yarn build && cross-env NODE_ENV=production node --experimental-specifier-resolution=node ./build/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.3",
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "fastify": "^4.5.3",
+    "fastify-socket.io": "^4.0.0",
+    "redis": "^4.3.0",
+    "socket.io": "^4.5.1"
+  }
+}
