@@ -1,8 +1,8 @@
 {
-  "name": "meatballs.live-comment-stream",
+  "name": "meatballs.live-stream",
   "version": "0.0.1",
   "main": "index.js",
-  "repository": "git@github.com:ritsuke/meatballs.live-comment-stream.git",
+  "repository": "git@github.com:ritsuke/meatballs.live-stream.git",
   "author": "ritsuke <ritsuke@gmail.com>",
   "license": "MIT",
   "type": "module",
