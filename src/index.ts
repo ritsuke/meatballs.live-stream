@@ -21,7 +21,11 @@ const app = fastify()
 
 app.register(fastifySocketIOPlugin, {
   cors: {
-    origin: ['http://localhost:3000', /\.meatballs.live\.live$/],
+    origin: [
+      'http://localhost:3000',
+      'https://www.meatballs.live/',
+      'https://meatballs.live'
+    ],
     methods: ['GET']
   }
 })
