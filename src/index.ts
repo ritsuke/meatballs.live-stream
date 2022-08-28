@@ -20,7 +20,10 @@ const redisPubClient = redis.createClient({ url: process.env.REDIS_DB_URL }),
 const app = fastify()
 
 app.register(fastifySocketIOPlugin, {
-  cors: { origin: 'http://localhost:3000', methods: ['GET'] }
+  cors: {
+    origin: ['http://localhost:3000', /\.meatballs.live\.live$/],
+    methods: ['GET']
+  }
 })
 
 app.get('/', (_, res) => {
