@@ -1,6 +1,7 @@
 import 'dotenv/config'
 
 import fastify from 'fastify'
+import cors from '@fastify/cors'
 import fastifySocketIOPlugin from 'fastify-socket.io'
 import redis from 'redis'
 import type { Socket } from 'socket.io'
@@ -19,11 +20,13 @@ const redisPubClient = redis.createClient({ url: process.env.REDIS_DB_URL }),
 
 const app = fastify()
 
+app.register(cors, { origin: '*', methods: ['GET'] })
+
 app.register(fastifySocketIOPlugin, {
   cors: {
     origin: [
       'http://localhost:3000',
-      'https://www.meatballs.live/',
+      'https://www.meatballs.live',
       'https://meatballs.live'
     ],
     methods: ['GET']
